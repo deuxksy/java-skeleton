@@ -1,0 +1,5 @@
+spring:
+  boot:
+    admin:
+      routes:
+        endpoints: ["jolokia","info","dump","env"]
