@@ -1,0 +1,11 @@
+spring:
+  kafka:
+    consumer:
+      auto-offset-reset: earliest
+      group-id: consumer
+#    bootstrap-servers: localhost:9092,localhost:9093,localhost:9094             #localhost 에 kafka 1.0.2 이 설치된 상태에서 작업 한다는 기준임
+    bootstrap-servers: localhost:9092
+
+kafka:
+  topic:
+    boot: boot.multi
