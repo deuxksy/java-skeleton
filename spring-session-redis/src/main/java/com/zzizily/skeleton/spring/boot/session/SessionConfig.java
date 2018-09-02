@@ -1,4 +1,4 @@
-package com.baeldung.spring.session;
+package com.zzizily.skeleton.spring.boot.session;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.session.data.redis.config.annotation.web.http.EnableRedisHttpSession;

@@ -1,4 +1,4 @@
-package com.baeldung.spring.session;
+package com.zzizily.skeleton.spring.boot.session;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;

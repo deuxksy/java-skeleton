@@ -1,4 +1,4 @@
-package com.baeldung.spring.session;
+package com.zzizily.skeleton.spring.boot.session;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
