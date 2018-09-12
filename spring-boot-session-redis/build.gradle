@@ -1,27 +1,18 @@
 buildscript {
-    repositories {
-        mavenCentral()
-    }
     dependencies {
         classpath("org.springframework.boot:spring-boot-gradle-plugin:1.5.14.RELEASE")
     }
 }
 
-apply plugin: 'java'
 apply plugin: 'eclipse-wtp'
-apply plugin: 'idea'
 apply plugin: 'war'
 apply plugin: 'org.springframework.boot'
-apply plugin: 'io.spring.dependency-management'
 
 group 'com.zzizily.skeleton.spring.session.redis'
 version '1.0-SNAPSHOT'
 
 sourceCompatibility = 1.8
 
-repositories {
-    mavenCentral()
-}
 
 war {
     archiveName = 's1.war'
@@ -34,5 +25,5 @@ dependencies {
     compile("org.springframework.boot:spring-boot-starter-security")
     compile("org.springframework.session:spring-session")
 
-    testCompile group: 'junit', name: 'junit', version: '4.12'
+    testCompile("org.springframework.boot:spring-boot-starter-test")
 }

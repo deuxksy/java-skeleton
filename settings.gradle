@@ -1,3 +1,4 @@
 rootProject.name = 'java-skeleton'
 
 include 'spring-boot-batch'
+include 'spring-boot-session-redis'

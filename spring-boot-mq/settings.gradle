@@ -1,4 +1,4 @@
-rootProject.name = 'batch-mq'
+rootProject.name = 'spring-boot-mq'
 
 include 'scheduler'
 include 'daemon'

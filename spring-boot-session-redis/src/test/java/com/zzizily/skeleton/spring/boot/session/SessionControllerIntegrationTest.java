@@ -22,27 +22,27 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import redis.clients.jedis.Jedis;
-import redis.embedded.RedisServer;
+//import redis.embedded.RedisServer;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = SessionWebApplication.class, webEnvironment = WebEnvironment.DEFINED_PORT)
 public class SessionControllerIntegrationTest {
 
     private Jedis jedis;
-    private static RedisServer redisServer;
+//    private static RedisServer redisServer;
     private TestRestTemplate testRestTemplate;
     private TestRestTemplate testRestTemplateWithAuth;
     private String testUrl = "http://localhost:8080/";
 
     @BeforeClass
     public static void startRedisServer() throws IOException {
-        redisServer = new RedisServer(6379);
-        redisServer.start();
+//        redisServer = new RedisServer(6379);
+//        redisServer.start();
     }
     
     @AfterClass
     public static void stopRedisServer() throws IOException {
-        redisServer.stop();
+//        redisServer.stop();
     }
     
     @Before
