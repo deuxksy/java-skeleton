@@ -1,0 +1,4 @@
+rootProject.name = 'batch-mq'
+
+include 'scheduler'
+include 'daemon'

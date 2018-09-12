@@ -1,0 +1,49 @@
+plugins {
+    id 'java'
+    id 'eclipse'
+    id 'idea'
+    id 'org.springframework.boot' version '1.5.14.RELEASE'
+    id 'net.ltgt.apt' version '0.10'
+}
+
+group 'com.kt.bigdata.bigmama.batch'
+version '0.0.1'
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+compileJava.options.encoding = 'UTF-8'
+
+//jar {
+//  baseName = 'bigmama-batch-oozie-daemon'
+//  excludes = ['**/application.yml']
+//}
+//
+//task('execJar', type: Jar, dependsOn: 'jar') {
+//  baseName = 'bigmama-batch-oozie-daemon'
+//  classifier = 'exec'
+//  from sourceSets.main.output
+//}
+//
+//bootRepackage {
+//  withJarTask = tasks['execJar']
+//}
+
+bootRun {
+    systemProperties = System.properties
+}
+
+dependencies {
+    compileOnly('org.projectlombok:lombok:1.18.0')
+    apt('org.projectlombok:lombok:1.18.0')
+    compile("org.springframework.boot:spring-boot-starter:${springBootVersion}")
+    compile("org.springframework.boot:spring-boot-starter-activemq:${springBootVersion}")
+    compile("org.springframework.boot:spring-boot-starter-batch:${springBootVersion}")
+    runtime("org.hsqldb:hsqldb:${hsqldbVersion}")
+    testCompile("org.springframework.boot:spring-boot-starter-test:${springBootVersion}")
+}
+
+repositories {
+    jcenter()
+    // maven {
+    //     url "http://localhost:8080/nexus/content/groups/public/"
+    // }
+}

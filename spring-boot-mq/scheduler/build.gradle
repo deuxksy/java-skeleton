@@ -1,0 +1,29 @@
+plugins {
+    id 'java'
+    id 'eclipse'
+    id 'idea'
+    id 'org.springframework.boot' version '1.5.14.RELEASE'
+    id 'net.ltgt.apt' version '0.10'
+}
+
+group 'com.kt.bigdata.bigmama.scheduler'
+version '0.0.1'
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+compileJava.options.encoding = 'UTF-8'
+
+repositories {
+    jcenter()
+}
+
+bootRun {
+    systemProperties = System.properties
+}
+
+dependencies {
+    compile("org.springframework.boot:spring-boot-starter:${springBootVersion}")
+    compile("org.springframework.boot:spring-boot-starter-activemq:${springBootVersion}")
+    compileOnly("org.projectlombok:lombok")
+
+    testCompile("org.springframework.boot:spring-boot-starter-test:${springBootVersion}")
+}

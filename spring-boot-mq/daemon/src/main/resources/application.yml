@@ -1,0 +1,24 @@
+#공통
+
+#기본 profile local 설정
+spring:
+  profiles:
+    active: local
+
+---
+#개인PC
+name: local
+spring:
+  profiles: local
+
+---
+#개발서버
+name: dev
+spring:
+  profiles: dev
+
+---
+#운영서버
+name: prod
+spring:
+  profiles: prod
