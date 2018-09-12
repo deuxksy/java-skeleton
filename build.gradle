@@ -1,0 +1,30 @@
+subprojects {
+    buildscript {
+        repositories {
+            jcenter()
+        }
+    }
+
+    apply plugin: 'java'
+    apply plugin: 'eclipse'
+    apply plugin: 'idea'
+    apply plugin: 'java-gradle-plugin'
+
+    eclipse {
+        classpath {
+            downloadJavadoc = true
+            downloadSources = true
+        }
+    }
+
+    idea {
+        module {
+            downloadJavadoc = true
+            downloadSources = true
+        }
+    }
+
+    repositories {
+        jcenter()
+    }
+}
