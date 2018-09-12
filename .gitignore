@@ -25,11 +25,10 @@ hs_err_pid*
 
 # gradle
 .gradle/
-gradlew
-gradlew.bat
 
 # idea
-.iml
+.idea/
+*.iml
 
 # eclipse
 .project
