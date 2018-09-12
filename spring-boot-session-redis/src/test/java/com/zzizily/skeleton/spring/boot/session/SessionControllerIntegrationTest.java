@@ -1,4 +1,4 @@
-package com.baeldung.spring.session;
+package com.zzizily.skeleton.spring.boot.session;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;

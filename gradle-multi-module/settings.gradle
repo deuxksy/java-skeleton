@@ -1,4 +1,0 @@
-rootProject.name = 'spring-boot-skeleton-multi-module'
-
-include 'boot-library'
-include 'boot-application'
