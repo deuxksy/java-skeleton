@@ -1,6 +1,25 @@
 spring:
+  application:
+    name: web
+  devtools:
+    livereload:
+      enabled: true
   boot:
     admin:
-      url: http://localhost:8080
+      url: http://localhost:9090
+
+
 server:
-  port: 9090
+  port: 8080
+
+management:
+  security:
+    enabled: false
+
+logging:
+  path: "log"
+
+info:
+  source: http://alm.dams.com:8080/gitblit
+  build: http://alm.dams.com:8080/jenknis
+  profile: ${spring.profile.active}

@@ -3,7 +3,7 @@ buildscript {
         springBootVersion = '1.5.16.RELEASE'
     }
     repositories {
-        mavenCentral()
+        jcenter()
     }
     dependencies {
         classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
@@ -14,12 +14,12 @@ apply plugin: 'java'
 apply plugin: 'eclipse'
 apply plugin: 'org.springframework.boot'
 
-group = 'com.zzizily.skeleton.spring.boot'
+group = 'com.zzizily.skeleton.spring.boot.admin'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = 1.8
 
 repositories {
-    mavenCentral()
+    jcenter()
 }
 
 
@@ -28,18 +28,12 @@ ext {
 }
 
 dependencies {
-    compile('de.codecentric:spring-boot-admin-starter-client')
-
-    compile('org.flywaydb:flyway-core')
-    compile('org.liquibase:liquibase-core')
-    compile('org.springframework.boot:spring-boot-starter-jdbc')
-    compile('mysql:mysql-connector-java')
-
+    compile('org.springframework.boot:spring-boot-actuator-docs')
+    compile('org.springframework.boot:spring-boot-starter-actuator')
+    compile('org.springframework.boot:spring-boot-starter-web')
+    compile('de.codecentric:spring-boot-admin-starter-server')
     runtime('org.springframework.boot:spring-boot-devtools')
     compileOnly('org.projectlombok:lombok')
-
-    compile('com.h2database:h2')
-
     testCompile('org.springframework.boot:spring-boot-starter-test')
 }
 

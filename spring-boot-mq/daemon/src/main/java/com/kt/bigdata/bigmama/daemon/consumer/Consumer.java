@@ -25,6 +25,7 @@ public class Consumer {
 	@JmsListener(destination = "sample.queue")
 	public void receiveQueue(String text) {
 		System.out.println(text);
+		String listener;
 	}
 
 }

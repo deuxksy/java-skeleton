@@ -13,7 +13,6 @@ version '1.0-SNAPSHOT'
 
 sourceCompatibility = 1.8
 
-
 war {
     archiveName = 's1.war'
 //    archivesBaseName = 's1'

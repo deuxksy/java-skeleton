@@ -1,5 +1,0 @@
-rootProject.name = 'spring-boot-admin'
-
-include 'admin'
-include 'scheduler'
-include 'web'

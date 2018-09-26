@@ -1,7 +1,51 @@
 spring:
+  application:
+    name: scheduler
+  devtools:
+    livereload:
+      enabled: true
   boot:
     admin:
-      url: http://localhost:8080
-server:
-  port: 7070
+      url: http://localhost:9090
+  h2:
+    console:
+      enabled: true
+  datasource:
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:
+  jpa:
+    hibernate:
+      ddl-auto: none
 
+liquibase:
+  user: sa
+  password:
+  change-log: classpath:/db/changelog/db.changelog-master.yaml
+  default-schema: SCHEDULER
+
+flyway:
+  user: sa
+  password:
+  schemas: SCHEDULER
+
+info:
+  scm-url: http://alm.dams.com:8080/gitblit/bigmama/batch
+  build-url: http://alm.dams.com:8080/jenkins/bigmama
+  profile: ${spring.profile.active}
+
+server:
+  port: 8010
+
+management:
+  security:
+    enabled: false
+
+logging:
+  path: "log"
+
+endpoints:
+  flyway:
+    sensitive: false
+  liquibase:
+    sensitive: false
