@@ -7,6 +7,10 @@ spring:
   boot:
     admin:
       url: http://localhost:9090
+      client:
+        # spring boot admin clinet 를 war 형태로 사용시 service-base-url (clinet 웹 서비스 기본 url) 정의 하지 않으면 Exception
+        # java.lang.IllegalStateException: service-base-url must be set when deployed to servlet-container
+        service-base-url: http://localhost:8080
 
 
 server:
@@ -17,7 +21,7 @@ management:
     enabled: false
 
 logging:
-  path: "log"
+  path: log
 
 info:
   source: http://alm.dams.com:8080/gitblit
