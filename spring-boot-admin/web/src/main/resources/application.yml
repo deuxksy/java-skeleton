@@ -27,3 +27,9 @@ info:
   source: http://alm.dams.com:8080/gitblit
   build: http://alm.dams.com:8080/jenknis
   profile: ${spring.profile.active}
+
+endpoints:
+  jmx:
+    # 2개 이상의 context 를 spring boot admin client 사용시 unique-names 설정 하지 않으면 Exception 발생
+    # Caused by: javax.management.InstanceAlreadyExistsException: org.springframework.boot:type=Endpoint,name=configurationPropertiesReportEndpoint
+    unique-names: true
