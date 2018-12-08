@@ -1,0 +1,3 @@
+# spring-4-xml
+Spring 4 (XML 기반), Gradle, logback, mybatis 이용한 REST Server 만들기
+

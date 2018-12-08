@@ -1,0 +1,31 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+        http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+    ">
+
+	<!-- transaction setting -->
+	<bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<property name="dataSource" ref="dataSourceMariaDB" />
+	</bean>
+
+	<!-- mapper 자동 등록 -->
+	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+		<property name="basePackage" value="com.zzizily.skeleton.spring4xml.**.mapper"/>
+		<property name="sqlSessionFactoryBeanName" value="sqlSessionFactory" />
+	</bean>
+
+	<!-- mybatis sessionFactory mybatis db연결을 위한 -->
+	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+		<property name="dataSource" ref="dataSourceMariaDB" />
+		<property name="configLocation" value="/WEB-INF/spring-mybatis-config.xml"/>
+		<property name="mapperLocations" value="/WEB-INF/mybatis/mapper/**/*.xml"/>
+	</bean>
+
+	<!--  mybatis sqlSessionTemplate  mybatis db연결을 위한 -->
+	<bean id="sqlSession" class="org.mybatis.spring.SqlSessionTemplate">
+		<constructor-arg index="0" ref="sqlSessionFactory" />
+	</bean>
+
+</beans>
